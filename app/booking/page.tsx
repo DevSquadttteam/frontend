@@ -1,15 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AppointmentsProvider } from "../context/appointment-context";
+import { AppointmentsProvider, User } from "../context/appointment-context";
 import Content from "./content";
 import api from "@/lib/utils"; // your axios instance
-
-interface User {
-    _id: string;
-    name: string;
-    role: string;
-}
 
 export default function Page() {
     const [doctors, setDoctors] = useState<User[]>([]);

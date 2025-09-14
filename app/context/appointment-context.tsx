@@ -3,16 +3,14 @@ import React, { createContext, useState, useContext, ReactNode, useEffect } from
 import api from "@/lib/utils"; // your axios instance
 
 export interface User {
+ _id: string;
   name: string;
   email: string;
-  password: string;
   role: "patient" | "doctor";
   gender: "male" | "female";
-  createdAt: Date;
-  updatedAt: Date;
 
   rating?: number;
-  appointments?: Types.ObjectId[];
+  appointments?: Appointment;
   field?: string;
 
   profilePicture?: string;
