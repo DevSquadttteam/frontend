@@ -2,10 +2,26 @@
 import React, { createContext, useState, useContext, ReactNode, useEffect } from "react";
 import api from "@/lib/utils"; // your axios instance
 
+export interface User {
+  name: string;
+  email: string;
+  password: string;
+  role: "patient" | "doctor";
+  gender: "male" | "female";
+  createdAt: Date;
+  updatedAt: Date;
+
+  rating?: number;
+  appointments?: Types.ObjectId[];
+  field?: string;
+
+  profilePicture?: string;
+}
+
 export interface Appointment {
   _id?: string;               // MongoDB _id
-  doctor: string;             // doctor ObjectId as string
-  patient: string;            // patient ObjectId as string
+  doctor: User;             // doctor ObjectId as string
+  patient: User;            // patient ObjectId as string
   dateTime: string;           // ISO string for Date
   status: "pending" | "confirmed" | "completed" | "cancelled";
   notes?: string;

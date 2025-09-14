@@ -99,7 +99,7 @@ const Settings = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Bio</label>
-                <textarea value={tempProfileData.bio} onChange={(e) => handleInputChange('bio', e.target.value)} rows="3" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none resize-none"/>
+                <textarea value={tempProfileData.bio} onChange={(e) => handleInputChange('bio', e.target.value)} rows={3} className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none resize-none"/>
               </div>
               <div className="flex gap-3">
                 <button onClick={handleSaveProfile} className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors">Save Changes</button>

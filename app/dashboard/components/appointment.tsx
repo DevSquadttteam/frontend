@@ -23,18 +23,17 @@ export default function AppointmentDashboard() {
           ) : (
             appointments.map((appt) => (
               <div
-                key={`${appt.date}-${appt.time}-${appt.name}`} // noyob key
+                key={`${appt._id}`} // noyob key
                 className="flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-lg transition"
               >
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
-                    {appt.name[0].toUpperCase()}
+                    {appt.patient.name}
                   </div>
                   <div>
-                    <p className="font-semibold">{appt.name}</p>
-                    <p className="text-gray-500">{appt.phone}</p>
-                    <p className="text-gray-400 text-sm">{appt.date}</p>
-                    <p className="text-gray-400 text-sm">{appt.time}</p>
+                    <p className="font-semibold">{appt.status}</p>
+                    <p className="text-gray-500">{appt.patient.name}</p>
+                    <p className="text-gray-400 text-sm">{appt.dateTime}</p>
                   </div>
                 </div>
                 <div className="text-gray-400 cursor-pointer">⋮</div>

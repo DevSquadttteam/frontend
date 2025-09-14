@@ -30,7 +30,7 @@ export default function BookingPage({ doctors }: { doctors: { _id: string; name:
         const appointment = {
             doctor: formData.doctor,
             patient: user._id,
-            dateTime: new Date(`${formData.date}T${formData.time}`),
+            dateTime: new Date(`${formData.date}T${formData.time}`).toDateString(),
             status: "pending" as const,
             notes: formData.notes || "",
         };
